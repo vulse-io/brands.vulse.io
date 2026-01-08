@@ -544,368 +544,358 @@
     </div>
   </nav>
 
-  <main class="main">
-    <header class="hero">
-      <div class="hero-eyebrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-        </svg>
-        Erken Erişim · Türkiye
-      </div>
-      <h1 class="hero-title">İçerik üreticilerle<br>çalışmanın yeni yolu</h1>
-      <p class="hero-desc">Açık pazaryeri. Şeffaf teklifler. Hızlı kampanya akışı.</p>
-    </header>
+<main class="main">
+  <header class="hero">
+    <div class="hero-eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+      Erken Erişim · Türkiye
+    </div>
+    <h1 class="hero-title">İçerik üreticilerle<br>çalışmanın yeni yolu</h1>
+    <p class="hero-desc">Açık pazaryeri. Şeffaf teklifler. Hızlı kampanya akışı.</p>
+  </header>
 
-    <div class="perks">
-      <div class="perk">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Öncelikli onboarding
+  <div class="perks">
+    <div class="perk">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+      Öncelikli onboarding
+    </div>
+    <div class="perk">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+      Early Partner statüsü
+    </div>
+    <div class="perk">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+      Lansman önceliği
+    </div>
+  </div>
+
+  <div class="form-card">
+    <div class="form-progress" id="formProgress">
+      <div class="progress-item active" id="prog1">
+        <span class="progress-num">1</span>İletişim
       </div>
-      <div class="perk">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Early Partner statüsü
+      <div class="progress-item" id="prog2">
+        <span class="progress-num">2</span>Marka
       </div>
-      <div class="perk">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Lansman önceliği
+      <div class="progress-item" id="prog3">
+        <span class="progress-num">3</span>Kampanya
       </div>
     </div>
 
-    <div class="form-card">
-      <div class="form-progress" id="formProgress">
-        <div class="progress-item active" id="prog1">
-          <span class="progress-num">1</span>İletişim
-        </div>
-        <div class="progress-item" id="prog2">
-          <span class="progress-num">2</span>Marka
-        </div>
-        <div class="progress-item" id="prog3">
-          <span class="progress-num">3</span>Kampanya
-        </div>
-      </div>
+    <div class="form-body">
+      <form id="brandForm"
+        action="https://docs.google.com/forms/d/e/1FAIpQLSe_VWM3rJ4hcxNPrEi9kAROR6Y3TCCKnJthxLeuBsTCggQPSg/formResponse"
+        method="POST"
+        target="hidden_iframe">
 
-      <div class="form-body">
-        <form id="brandForm"
-          action="https://docs.google.com/forms/d/e/FORM_ID_HERE/formResponse"
-          method="POST"
-          target="hidden_iframe">
-
-          <!-- STEP 1: CONTACT -->
-          <div class="step active" id="step1">
-            <div class="form-group">
-              <label class="label">Şirket / Marka adı</label>
-              <!-- TODO: entry.xxxxx değiştir -->
-              <input type="text" name="entry.1111111111" id="brand_name" placeholder="Örn: Vulse" required>
-            </div>
-
-            <div class="form-group">
-              <label class="label">İletişim kişisi</label>
-              <input type="text" name="entry.2222222222" id="contact_name" placeholder="Ad Soyad" required>
-            </div>
-
-            <div class="form-group">
-              <label class="label">E-posta</label>
-              <input type="email" name="entry.3333333333" id="email" placeholder="ornek@vulse.io" required>
-            </div>
-
-            <div class="form-group">
-              <label class="label">Telefon <span class="label-sub">(opsiyonel)</span></label>
-              <input type="tel" name="entry.4444444444" id="phone" placeholder="+90 5XX XXX XX XX">
-            </div>
-
-            <div class="form-group">
-              <label class="label">Ülke</label>
-              <select name="entry.5555555555" id="country" required>
-                <option value="" disabled selected>Seçiniz</option>
-                <option value="Türkiye">Türkiye</option>
-                <option value="İtalya">İtalya</option>
-                <option value="Almanya">Almanya</option>
-                <option value="İngiltere">İngiltere</option>
-                <option value="ABD">ABD</option>
-                <option value="Fransa">Fransa</option>
-                <option value="İspanya">İspanya</option>
-                <option value="Hollanda">Hollanda</option>
-                <option value="Diğer">Diğer</option>
-              </select>
-            </div>
-
-            <div class="btn-group">
-              <button type="button" class="btn btn-primary" onclick="goToStep(2)">
-                Devam
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </button>
-            </div>
+        <div class="step active" id="step1">
+          <div class="form-group">
+            <label class="label">Şirket / Marka adı</label>
+            <input type="text" name="entry.134694508" id="brand_name" placeholder="Örn: Vulse" required>
           </div>
 
-          <!-- STEP 2: BRAND -->
-          <div class="step" id="step2">
-
-            <div class="form-group">
-              <label class="label">Web sitesi <span class="label-sub">(opsiyonel)</span></label>
-              <input type="url" name="entry.6666666666" id="website" placeholder="https://...">
-            </div>
-
-            <div class="form-group">
-              <label class="label">Marka kategorisi <span class="label-sub">(en az 1)</span></label>
-              <div class="category-grid">
-                <label class="cat-item">
-                  <input type="checkbox" name="brand_category" value="Yemek & İçecek">
-                  <div class="cat-box"><span class="cat-name">Yemek</span></div>
-                </label>
-                <label class="cat-item">
-                  <input type="checkbox" name="brand_category" value="Moda">
-                  <div class="cat-box"><span class="cat-name">Moda</span></div>
-                </label>
-                <label class="cat-item">
-                  <input type="checkbox" name="brand_category" value="Güzellik">
-                  <div class="cat-box"><span class="cat-name">Güzellik</span></div>
-                </label>
-                <label class="cat-item">
-                  <input type="checkbox" name="brand_category" value="Teknoloji">
-                  <div class="cat-box"><span class="cat-name">Teknoloji</span></div>
-                </label>
-                <label class="cat-item">
-                  <input type="checkbox" name="brand_category" value="Spor">
-                  <div class="cat-box"><span class="cat-name">Spor</span></div>
-                </label>
-                <label class="cat-item">
-                  <input type="checkbox" name="brand_category" value="Ev & Yaşam">
-                  <div class="cat-box"><span class="cat-name">Ev</span></div>
-                </label>
-                <label class="cat-item">
-                  <input type="checkbox" name="brand_category" value="Turizm & Deneyim">
-                  <div class="cat-box"><span class="cat-name">Seyahat</span></div>
-                </label>
-                <label class="cat-item">
-                  <input type="checkbox" name="brand_category" value="Eğitim">
-                  <div class="cat-box"><span class="cat-name">Eğitim</span></div>
-                </label>
-                <label class="cat-item">
-                  <input type="checkbox" name="brand_category" value="Diğer">
-                  <div class="cat-box"><span class="cat-name">Diğer</span></div>
-                </label>
-              </div>
-
-              <input type="hidden" name="entry.7777777777" id="brand_categories_hidden">
-            </div>
-
-            <div class="form-group">
-              <label class="label">Satış kanalınız <span class="label-sub">(birden fazla)</span></label>
-              <div class="platform-list">
-                <div class="platform-item" id="channel-web">
-                  <div class="platform-header" onclick="toggleChannel('web')">
-                    <div class="platform-checkbox">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                        <polyline points="20 6 9 17 4 12"/>
-                      </svg>
-                    </div>
-                    <div class="platform-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-                        <circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18"/><path d="M12 3c-3 3-3 15 0 18"/>
-                      </svg>
-                    </div>
-                    <span class="platform-name">Web sitesi / E-ticaret</span>
-                  </div>
-                  <div class="platform-fields">
-                    <input type="text" name="entry.8888888888" id="web_platform" placeholder="Shopify / Ikas / Ticimax / Diğer">
-                  </div>
-                </div>
-
-                <div class="platform-item" id="channel-marketplace">
-                  <div class="platform-header" onclick="toggleChannel('marketplace')">
-                    <div class="platform-checkbox">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                        <polyline points="20 6 9 17 4 12"/>
-                      </svg>
-                    </div>
-                    <div class="platform-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-                        <path d="M3 7h18l-1 14H4L3 7z"/><path d="M16 7a4 4 0 0 0-8 0"/>
-                      </svg>
-                    </div>
-                    <span class="platform-name">Pazaryeri</span>
-                  </div>
-                  <div class="platform-fields">
-                    <input type="text" name="entry.9999999999" id="marketplaces" placeholder="Trendyol / Hepsiburada / Amazon / Diğer">
-                  </div>
-                </div>
-
-                <div class="platform-item" id="channel-store">
-                  <div class="platform-header" onclick="toggleChannel('store')">
-                    <div class="platform-checkbox">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                        <polyline points="20 6 9 17 4 12"/>
-                      </svg>
-                    </div>
-                    <div class="platform-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-                        <path d="M4 10h16v10H4V10z"/><path d="M2 10l2-6h16l2 6"/>
-                      </svg>
-                    </div>
-                    <span class="platform-name">Dükkan</span>
-                  </div>
-                  <div class="platform-fields">
-                    <input type="text" name="entry.1010101010" id="store_city" placeholder="Şehir / Bölge (opsiyonel)">
-                  </div>
-                </div>
-              </div>
-
-              <input type="hidden" name="entry.1111111112" id="sales_channels_hidden">
-            </div>
-
-            <div class="btn-group">
-              <button type="button" class="btn btn-secondary" onclick="goToStep(1)">Geri</button>
-              <button type="button" class="btn btn-primary" onclick="goToStep(3)">Devam</button>
-            </div>
+          <div class="form-group">
+            <label class="label">İletişim kişisi</label>
+            <input type="text" name="entry.758883057" id="contact_name" placeholder="Ad Soyad" required>
           </div>
 
-          <!-- STEP 3: CAMPAIGN -->
-          <div class="step" id="step3">
-
-            <div class="form-group">
-              <label class="label">Hedefiniz <span class="label-sub">(en az 1)</span></label>
-              <div class="category-grid">
-                <label class="cat-item">
-                  <input type="checkbox" name="goal" value="Satış">
-                  <div class="cat-box"><span class="cat-name">Satış</span></div>
-                </label>
-                <label class="cat-item">
-                  <input type="checkbox" name="goal" value="Website trafiği">
-                  <div class="cat-box"><span class="cat-name">Trafik</span></div>
-                </label>
-                <label class="cat-item">
-                  <input type="checkbox" name="goal" value="Mağaza ziyareti">
-                  <div class="cat-box"><span class="cat-name">Ziyaret</span></div>
-                </label>
-                <label class="cat-item">
-                  <input type="checkbox" name="goal" value="Awareness">
-                  <div class="cat-box"><span class="cat-name">Bilinirlik</span></div>
-                </label>
-                <label class="cat-item">
-                  <input type="checkbox" name="goal" value="UGC içerik üretimi">
-                  <div class="cat-box"><span class="cat-name">UGC</span></div>
-                </label>
-                <label class="cat-item">
-                  <input type="checkbox" name="goal" value="Diğer">
-                  <div class="cat-box"><span class="cat-name">Diğer</span></div>
-                </label>
-              </div>
-
-              <input type="hidden" name="entry.1212121212" id="goals_hidden">
-            </div>
-
-            <div class="form-group">
-              <label class="label">Hangi platformlarda kampanya düşünüyorsunuz? <span class="label-sub">(en az 1)</span></label>
-              <div class="platform-list">
-                <div class="platform-item" id="plat-ig">
-                  <div class="platform-header" onclick="togglePlatform('ig')">
-                    <div class="platform-checkbox">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                        <polyline points="20 6 9 17 4 12"/>
-                      </svg>
-                    </div>
-                    <div class="platform-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-                        <rect x="2" y="2" width="20" height="20" rx="5"/>
-                        <circle cx="12" cy="12" r="4"/>
-                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
-                      </svg>
-                    </div>
-                    <span class="platform-name">Instagram</span>
-                  </div>
-                </div>
-
-                <div class="platform-item" id="plat-tiktok">
-                  <div class="platform-header" onclick="togglePlatform('tiktok')">
-                    <div class="platform-checkbox">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                        <polyline points="20 6 9 17 4 12"/>
-                      </svg>
-                    </div>
-                    <div class="platform-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-                        <path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 2.5 4.5 5 5"/>
-                      </svg>
-                    </div>
-                    <span class="platform-name">TikTok</span>
-                  </div>
-                </div>
-
-                <div class="platform-item" id="plat-youtube">
-                  <div class="platform-header" onclick="togglePlatform('youtube')">
-                    <div class="platform-checkbox">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                        <polyline points="20 6 9 17 4 12"/>
-                      </svg>
-                    </div>
-                    <div class="platform-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-                        <rect x="2" y="4" width="20" height="16" rx="4"/>
-                        <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
-                      </svg>
-                    </div>
-                    <span class="platform-name">YouTube</span>
-                  </div>
-                </div>
-              </div>
-
-              <input type="hidden" name="entry.1313131313" id="campaign_platforms_hidden">
-            </div>
-
-            <div class="form-group">
-              <label class="label">Aylık içerik üretici bütçesi <span class="label-sub">(tahmini)</span></label>
-              <select name="entry.1414141414" id="budget_range" required>
-                <option value="" disabled selected>Seçiniz</option>
-                <option value="0-5.000 TL">0 – 5.000 TL</option>
-                <option value="5.000-15.000 TL">5.000 – 15.000 TL</option>
-                <option value="15.000-50.000 TL">15.000 – 50.000 TL</option>
-                <option value="50.000-150.000 TL">50.000 – 150.000 TL</option>
-                <option value="150.000 TL+">150.000 TL+</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="label">İş birliği tipi</label>
-              <select name="entry.1515151515" id="collab_type" required>
-                <option value="" disabled selected>Seçiniz</option>
-                <option value="Ücretli iş birliği">Ücretli iş birliği</option>
-                <option value="Ürün + ücret">Ürün + ücret</option>
-                <option value="Sadece UGC (hesapta paylaşım yok)">Sadece UGC (hesapta paylaşım yok)</option>
-                <option value="Affiliate / kod / link">Affiliate / kod / link</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="label">Ne zaman başlamak istiyorsunuz?</label>
-              <select name="entry.1616161616" id="timeline" required>
-                <option value="" disabled selected>Seçiniz</option>
-                <option value="Bu hafta">Bu hafta</option>
-                <option value="1-2 hafta içinde">1–2 hafta içinde</option>
-                <option value="Bu ay">Bu ay</option>
-                <option value="Net değil / görüşelim">Net değil / görüşelim</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="label">Notlar <span class="label-sub">(opsiyonel)</span></label>
-              <textarea name="entry.1717171717" id="notes" placeholder="Ürün, hedef kitle, şehir, kampanya beklentisi, varsa link/kod…"></textarea>
-            </div>
-
-            <div class="btn-group">
-              <button type="button" class="btn btn-secondary" onclick="goToStep(2)">Geri</button>
-              <button type="submit" class="btn btn-primary" id="submitBtn">Başvur</button>
-            </div>
+          <div class="form-group">
+            <label class="label">E-posta</label>
+            <input type="email" name="entry.1464219702" id="email" placeholder="ornek@vulse.io" required>
           </div>
 
-        </form>
+          <div class="form-group">
+            <label class="label">Telefon <span class="label-sub">(opsiyonel)</span></label>
+            <input type="tel" name="entry.1370613854" id="phone" placeholder="+90 5XX XXX XX XX">
+          </div>
+
+          <div class="form-group">
+            <label class="label">Ülke</label>
+            <select name="entry.303071481" id="country" required>
+              <option value="" disabled selected>Seçiniz</option>
+              <option value="Türkiye">Türkiye</option>
+              <option value="İtalya">İtalya</option>
+              <option value="Almanya">Almanya</option>
+              <option value="İngiltere">İngiltere</option>
+              <option value="ABD">ABD</option>
+              <option value="Fransa">Fransa</option>
+              <option value="İspanya">İspanya</option>
+              <option value="Hollanda">Hollanda</option>
+              <option value="Diğer">Diğer</option>
+            </select>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" onclick="goToStep(2)">
+              Devam
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="step" id="step2">
+          <div class="form-group">
+            <label class="label">Web sitesi <span class="label-sub">(opsiyonel)</span></label>
+            <input type="url" name="entry.1334927752" id="website" placeholder="https://...">
+          </div>
+
+          <div class="form-group">
+            <label class="label">Marka kategorisi <span class="label-sub">(en az 1)</span></label>
+            <div class="category-grid">
+              <label class="cat-item">
+                <input type="checkbox" name="brand_category" value="Yemek & İçecek">
+                <div class="cat-box"><span class="cat-name">Yemek</span></div>
+              </label>
+              <label class="cat-item">
+                <input type="checkbox" name="brand_category" value="Moda">
+                <div class="cat-box"><span class="cat-name">Moda</span></div>
+              </label>
+              <label class="cat-item">
+                <input type="checkbox" name="brand_category" value="Güzellik">
+                <div class="cat-box"><span class="cat-name">Güzellik</span></div>
+              </label>
+              <label class="cat-item">
+                <input type="checkbox" name="brand_category" value="Teknoloji">
+                <div class="cat-box"><span class="cat-name">Teknoloji</span></div>
+              </label>
+              <label class="cat-item">
+                <input type="checkbox" name="brand_category" value="Spor">
+                <div class="cat-box"><span class="cat-name">Spor</span></div>
+              </label>
+              <label class="cat-item">
+                <input type="checkbox" name="brand_category" value="Ev & Yaşam">
+                <div class="cat-box"><span class="cat-name">Ev</span></div>
+              </label>
+              <label class="cat-item">
+                <input type="checkbox" name="brand_category" value="Turizm & Deneyim">
+                <div class="cat-box"><span class="cat-name">Seyahat</span></div>
+              </label>
+              <label class="cat-item">
+                <input type="checkbox" name="brand_category" value="Eğitim">
+                <div class="cat-box"><span class="cat-name">Eğitim</span></div>
+              </label>
+              <label class="cat-item">
+                <input type="checkbox" name="brand_category" value="Diğer">
+                <div class="cat-box"><span class="cat-name">Diğer</span></div>
+              </label>
+            </div>
+            <input type="hidden" name="entry.1874197940" id="brand_categories_hidden">
+          </div>
+
+          <div class="form-group">
+            <label class="label">Satış kanalınız <span class="label-sub">(birden fazla)</span></label>
+            <div class="platform-list">
+              <div class="platform-item" id="channel-web">
+                <div class="platform-header" onclick="toggleChannel('web')">
+                  <div class="platform-checkbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </div>
+                  <div class="platform-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                      <circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18"/><path d="M12 3c-3 3-3 15 0 18"/>
+                    </svg>
+                  </div>
+                  <span class="platform-name">Web sitesi / E-ticaret</span>
+                </div>
+                <div class="platform-fields">
+                  <input type="text" name="entry.1660435298" id="web_platform" placeholder="Shopify / Ikas / Ticimax / Diğer">
+                </div>
+              </div>
+
+              <div class="platform-item" id="channel-marketplace">
+                <div class="platform-header" onclick="toggleChannel('marketplace')">
+                  <div class="platform-checkbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </div>
+                  <div class="platform-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                      <path d="M3 7h18l-1 14H4L3 7z"/><path d="M16 7a4 4 0 0 0-8 0"/>
+                    </svg>
+                  </div>
+                  <span class="platform-name">Pazaryeri</span>
+                </div>
+                <div class="platform-fields">
+                  <input type="text" name="entry.318138042" id="marketplaces" placeholder="Trendyol / Hepsiburada / Amazon / Diğer">
+                </div>
+              </div>
+
+              <div class="platform-item" id="channel-store">
+                <div class="platform-header" onclick="toggleChannel('store')">
+                  <div class="platform-checkbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </div>
+                  <div class="platform-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                      <path d="M4 10h16v10H4V10z"/><path d="M2 10l2-6h16l2 6"/>
+                    </svg>
+                  </div>
+                  <span class="platform-name">Dükkan</span>
+                </div>
+                <div class="platform-fields">
+                  <input type="text" name="entry.290878763" id="store_city" placeholder="Şehir / Bölge / Adres (opsiyonel)">
+                </div>
+              </div>
+            </div>
+            <input type="hidden" name="entry.1583460590" id="sales_channels_hidden">
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary" onclick="goToStep(1)">Geri</button>
+            <button type="button" class="btn btn-primary" onclick="goToStep(3)">Devam</button>
+          </div>
+        </div>
+
+        <div class="step" id="step3">
+          <div class="form-group">
+            <label class="label">Hedefiniz <span class="label-sub">(en az 1)</span></label>
+            <div class="category-grid">
+              <label class="cat-item">
+                <input type="checkbox" name="goal" value="Satış">
+                <div class="cat-box"><span class="cat-name">Satış</span></div>
+              </label>
+              <label class="cat-item">
+                <input type="checkbox" name="goal" value="Website trafiği">
+                <div class="cat-box"><span class="cat-name">Trafik</span></div>
+              </label>
+              <label class="cat-item">
+                <input type="checkbox" name="goal" value="Mağaza ziyareti">
+                <div class="cat-box"><span class="cat-name">Ziyaret</span></div>
+              </label>
+              <label class="cat-item">
+                <input type="checkbox" name="goal" value="Awareness">
+                <div class="cat-box"><span class="cat-name">Bilinirlik</span></div>
+              </label>
+              <label class="cat-item">
+                <input type="checkbox" name="goal" value="UGC içerik üretimi">
+                <div class="cat-box"><span class="cat-name">UGC</span></div>
+              </label>
+              <label class="cat-item">
+                <input type="checkbox" name="goal" value="Diğer">
+                <div class="cat-box"><span class="cat-name">Diğer</span></div>
+              </label>
+            </div>
+            <input type="hidden" name="entry.810414310" id="goals_hidden">
+          </div>
+
+          <div class="form-group">
+            <label class="label">Hangi platformlarda kampanya düşünüyorsunuz? <span class="label-sub">(en az 1)</span></label>
+            <div class="platform-list">
+              <div class="platform-item" id="plat-ig">
+                <div class="platform-header" onclick="togglePlatform('ig')">
+                  <div class="platform-checkbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </div>
+                  <div class="platform-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                      <rect x="2" y="2" width="20" height="20" rx="5"/>
+                      <circle cx="12" cy="12" r="4"/>
+                      <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+                    </svg>
+                  </div>
+                  <span class="platform-name">Instagram</span>
+                </div>
+              </div>
+
+              <div class="platform-item" id="plat-tiktok">
+                <div class="platform-header" onclick="togglePlatform('tiktok')">
+                  <div class="platform-checkbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </div>
+                  <div class="platform-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                      <path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 2.5 4.5 5 5"/>
+                    </svg>
+                  </div>
+                  <span class="platform-name">TikTok</span>
+                </div>
+              </div>
+
+              <div class="platform-item" id="plat-youtube">
+                <div class="platform-header" onclick="togglePlatform('youtube')">
+                  <div class="platform-checkbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </div>
+                  <div class="platform-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                      <rect x="2" y="4" width="20" height="16" rx="4"/>
+                      <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
+                    </svg>
+                  </div>
+                  <span class="platform-name">YouTube</span>
+                </div>
+              </div>
+            </div>
+            <input type="hidden" name="entry.1589748266" id="campaign_platforms_hidden">
+          </div>
+
+          <div class="form-group">
+            <label class="label">Aylık içerik üretici bütçesi <span class="label-sub">(tahmini)</span></label>
+            <select name="entry.2102941029" id="budget_range" required>
+              <option value="" disabled selected>Seçiniz</option>
+              <option value="0-5.000 TL">0 – 5.000 TL</option>
+              <option value="5.000-15.000 TL">5.000 – 15.000 TL</option>
+              <option value="15.000-50.000 TL">15.000 – 50.000 TL</option>
+              <option value="50.000-150.000 TL">50.000 – 150.000 TL</option>
+              <option value="150.000 TL+">150.000 TL+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="label">İş birliği tipi</label>
+            <select name="entry.1044960399" id="collab_type" required>
+              <option value="" disabled selected>Seçiniz</option>
+              <option value="Ücretli iş birliği">Ücretli iş birliği</option>
+              <option value="Ürün + ücret">Ürün + ücret</option>
+              <option value="Sadece UGC (hesapta paylaşım yok)">Sadece UGC (hesapta paylaşım yok)</option>
+              <option value="Affiliate / kod / link">Affiliate / kod / link</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="label">Ne zaman başlamak istiyorsunuz?</label>
+            <select name="entry.1829315085" id="timeline" required>
+              <option value="" disabled selected>Seçiniz</option>
+              <option value="Bu hafta">Bu hafta</option>
+              <option value="1-2 hafta içinde">1–2 hafta içinde</option>
+              <option value="Bu ay">Bu ay</option>
+              <option value="Net değil / görüşelim">Net değil / görüşelim</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="label">Notlar <span class="label-sub">(opsiyonel)</span></label>
+            <textarea name="entry.1176373368" id="notes" placeholder="Ürün, hedef kitle, şehir, kampanya beklentisi, varsa link/kod…"></textarea>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary" onclick="goToStep(2)">Geri</button>
+            <button type="submit" class="btn btn-primary" id="submitBtn">Başvur</button>
+          </div>
+        </div>
+
+      </form>
 
         <div class="success-screen" id="successScreen">
           <div class="success-icon">
@@ -997,7 +987,7 @@
     function validateStep2() {
       const cats = document.querySelectorAll('input[name="brand_category"]:checked');
       if (cats.length === 0) { alert('En az bir marka kategorisi seçin.'); return false; }
-      // satış kanalı zorunlu değil (kebapçı vs. için), ama isterseniz zorunlu yapabilirsiniz.
+     
       return true;
     }
 
@@ -1045,27 +1035,23 @@
         return;
       }
 
-      // Categories -> hidden
+
       const cats = [];
       document.querySelectorAll('input[name="brand_category"]:checked').forEach(cb => cats.push(cb.value));
       document.getElementById('brand_categories_hidden').value = cats.join(', ');
 
-      // Goals -> hidden
       const goals = [];
       document.querySelectorAll('input[name="goal"]:checked').forEach(cb => goals.push(cb.value));
       document.getElementById('goals_hidden').value = goals.join(', ');
 
-      // Sales channels -> hidden
       const channels = [];
       selectedChannels.forEach(x => channels.push(x));
       document.getElementById('sales_channels_hidden').value = channels.join(', ');
 
-      // Platforms -> hidden
       const plats = [];
       selectedPlatforms.forEach(x => plats.push(x));
       document.getElementById('campaign_platforms_hidden').value = plats.join(', ');
 
-      // UI success
       const btn = document.getElementById('submitBtn');
       btn.innerHTML = 'Gönderiliyor...';
       btn.disabled = true;
