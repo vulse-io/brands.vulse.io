@@ -987,7 +987,7 @@
     function validateStep2() {
       const cats = document.querySelectorAll('input[name="brand_category"]:checked');
       if (cats.length === 0) { alert('En az bir marka kategorisi seçin.'); return false; }
-     
+      // satış kanalı zorunlu değil (kebapçı vs. için), ama isterseniz zorunlu yapabilirsiniz.
       return true;
     }
 
@@ -1035,23 +1035,27 @@
         return;
       }
 
-
+      // Categories -> hidden
       const cats = [];
       document.querySelectorAll('input[name="brand_category"]:checked').forEach(cb => cats.push(cb.value));
       document.getElementById('brand_categories_hidden').value = cats.join(', ');
 
+      // Goals -> hidden
       const goals = [];
       document.querySelectorAll('input[name="goal"]:checked').forEach(cb => goals.push(cb.value));
       document.getElementById('goals_hidden').value = goals.join(', ');
 
+      // Sales channels -> hidden
       const channels = [];
       selectedChannels.forEach(x => channels.push(x));
       document.getElementById('sales_channels_hidden').value = channels.join(', ');
 
+      // Platforms -> hidden
       const plats = [];
       selectedPlatforms.forEach(x => plats.push(x));
       document.getElementById('campaign_platforms_hidden').value = plats.join(', ');
 
+      // UI success
       const btn = document.getElementById('submitBtn');
       btn.innerHTML = 'Gönderiliyor...';
       btn.disabled = true;
