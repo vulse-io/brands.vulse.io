@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="Vulse — Markalar ve içerik üreticileri için açık pazaryeri. Erken erişim marka başvurusu.">
+  <meta name="theme-color" content="#1a1f3c">
+
+  <title>Vulse for Brands — Erken Erişim</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --white: #ffffff;
+      --off-white: #f8fafc;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+
+      --dark: #1a1f3c;
+      --dark-soft: #2d3356;
+
+      --orange: #ff6b35;
+      --orange-hover: #e85a2a;
+      --orange-light: rgba(255, 107, 53, 0.08);
+      --orange-glow: rgba(255, 107, 53, 0.15);
+
+      --success: #10b981;
+      --success-light: rgba(16, 185, 129, 0.1);
+
+      --radius: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%);
+      color: var(--dark);
+      min-height: 100vh;
+      min-height: 100dvh;
+    }
+
+    .hidden-iframe { display: none !important; }
+
+    .navbar {
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-100);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-badge {
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--orange);
+      background: var(--orange-light);
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+
+    .nav-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      background: var(--gray-50);
+      padding: 6px 10px;
+      border-radius: 100px;
+    }
+
+    .nav-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--success);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+    .main {
+      max-width: 440px;
+      margin: 0 auto;
+      padding: 20px 20px 32px;
+    }
+
+    .hero { text-align: center; margin-bottom: 20px; }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--orange);
+      background: var(--orange-light);
+      padding: 6px 12px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+
+    .hero-eyebrow svg { width: 12px; height: 12px; }
+
+    .hero-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .hero-desc {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      line-height: 1.5;
+    }
+
+    .perks {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding: 14px;
+      background: var(--dark);
+      border-radius: var(--radius);
+    }
+
+    .perk {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .perk svg { width: 14px; height: 14px; color: var(--orange); }
+
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    .form-progress {
+      display: flex;
+      background: var(--gray-50);
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .progress-item {
+      flex: 1;
+      padding: 12px 8px;
+      text-align: center;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      position: relative;
+      transition: all 0.2s;
+    }
+
+    .progress-item.active { color: var(--orange); background: var(--white); }
+    .progress-item.completed { color: var(--success); }
+
+    .progress-item.active::after, .progress-item.completed::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    .progress-item.active::after { background: var(--orange); }
+    .progress-item.completed::after { background: var(--success); }
+
+    .progress-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      background: var(--gray-200);
+      border-radius: 50%;
+      font-size: 0.625rem;
+      margin-right: 4px;
+      transition: all 0.2s;
+    }
+    .progress-item.active .progress-num { background: var(--orange); color: white; }
+    .progress-item.completed .progress-num { background: var(--success); color: white; }
+
+    .form-body { padding: 20px; }
+
+    .step { display: none; animation: slideIn 0.25s ease; }
+    .step.active { display: block; }
+
+    @keyframes slideIn { from { opacity: 0; transform: translateX(10px);} to { opacity: 1; transform: translateX(0);} }
+
+    .form-group { margin-bottom: 14px; }
+
+    .label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .label-sub { font-weight: 400; color: var(--gray-400); }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 0.9375rem;
+      font-family: inherit;
+      background: var(--gray-50);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      color: var(--dark);
+      transition: all 0.15s;
+      -webkit-appearance: none;
+    }
+
+    textarea { min-height: 90px; resize: vertical; }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--orange);
+      background: var(--white);
+      box-shadow: 0 0 0 3px var(--orange-glow);
+    }
+
+    input::placeholder, textarea::placeholder { color: var(--gray-400); }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%239ca3af' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    .platform-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .platform-item {
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all 0.15s;
+      background: var(--white);
+    }
+
+    .platform-item.selected {
+      border-color: var(--orange);
+      background: var(--orange-light);
+    }
+
+    .platform-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      cursor: pointer;
+    }
+
+    .platform-checkbox {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--gray-300);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+      flex-shrink: 0;
+    }
+
+    .platform-item.selected .platform-checkbox {
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .platform-checkbox svg {
+      width: 12px;
+      height: 12px;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .platform-item.selected .platform-checkbox svg { opacity: 1; }
+
+    .platform-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .platform-icon svg { width: 22px; height: 22px; color: var(--gray-500); }
+    .platform-item.selected .platform-icon svg { color: var(--dark); }
+
+    .platform-name { font-size: 0.875rem; font-weight: 600; color: var(--gray-600); }
+    .platform-item.selected .platform-name { color: var(--dark); }
+
+    .platform-fields {
+      display: none;
+      padding: 0 14px 14px;
+      gap: 8px;
+    }
+
+    .platform-item.selected .platform-fields {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .platform-fields input, .platform-fields select {
+      background: var(--white);
+      padding: 10px 12px;
+      font-size: 0.875rem;
+    }
+
+    .category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+    .cat-item input { display: none; }
+
+    .cat-box {
+      background: var(--gray-50);
+      border: 1.5px solid var(--gray-200);
+      padding: 12px 6px;
+      border-radius: var(--radius);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .cat-box:active { transform: scale(0.97); }
+
+    .cat-item input:checked + .cat-box {
+      background: var(--orange-light);
+      border-color: var(--orange);
+    }
+
+    .cat-emoji { font-size: 1.25rem; display: block; margin-bottom: 4px; }
+
+    .cat-name { font-size: 0.6875rem; font-weight: 600; color: var(--gray-500); }
+    .cat-item input:checked + .cat-box .cat-name { color: var(--orange); }
+
+    .btn-group { display: flex; gap: 10px; margin-top: 18px; }
+
+    .btn {
+      flex: 1;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-family: inherit;
+      border: none;
+    }
+
+    .btn-primary { background: var(--orange); color: white; }
+    .btn-primary:hover { background: var(--orange-hover); }
+    .btn-primary:active { transform: scale(0.98); }
+
+    .btn-secondary { background: var(--gray-100); color: var(--gray-600); }
+    .btn-secondary:active { background: var(--gray-200); }
+
+    .btn svg { width: 16px; height: 16px; }
+
+    .form-footer {
+      padding: 14px 20px;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-100);
+      text-align: center;
+    }
+
+    .form-footer p {
+      font-size: 0.6875rem;
+      color: var(--gray-400);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .form-footer svg { width: 12px; height: 12px; }
+
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 24px 20px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .success-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 16px;
+      background: var(--success-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .success-icon svg { width: 28px; height: 28px; color: var(--success); }
+
+    .success-screen h2 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .success-screen > p {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      margin-bottom: 20px;
+    }
+
+    .success-card {
+      background: var(--gray-50);
+      border-radius: var(--radius);
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      margin-bottom: 16px;
+    }
+
+    .success-avatar {
+      width: 40px;
+      height: 40px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 0.8125rem;
+      flex-shrink: 0;
+    }
+
+    .success-info h4 { font-size: 0.875rem; font-weight: 600; color: var(--dark); }
+    .success-info p { font-size: 0.75rem; color: var(--gray-400); margin: 0; }
+
+    .success-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 16px 20px;
+      font-size: 0.6875rem;
+      color: var(--gray-400);
+    }
+
+    .footer a { color: var(--gray-500); text-decoration: none; }
+
+    .footer-location {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 4px;
+      font-size: 0.6875rem;
+      color: var(--gray-400);
+    }
+
+    @media (max-width: 380px) {
+      .main { padding: 16px 16px 28px; }
+      .hero-title { font-size: 1.375rem; }
+      .perks { flex-direction: column; gap: 8px; align-items: center; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+
+<body>
+  <iframe name="hidden_iframe" class="hidden-iframe"></iframe>
+
+  <nav class="navbar">
+    <a href="https://vulse.io" class="logo">
+      <span class="logo-text">vulse.</span>
+      <span class="logo-badge">Brands</span>
+    </a>
+    <div class="nav-badge">
+      <span class="nav-badge-dot"></span>
+      Başvurular Açık
+    </div>
+  </nav>
+
+  <main class="main">
+    <header class="hero">
+      <div class="hero-eyebrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        Erken Erişim · Türkiye
+      </div>
+      <h1 class="hero-title">İçerik üreticilerle<br>çalışmanın yeni yolu</h1>
+      <p class="hero-desc">Açık pazaryeri. Şeffaf teklifler. Hızlı kampanya akışı.</p>
+    </header>
+
+    <div class="perks">
+      <div class="perk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Öncelikli onboarding
+      </div>
+      <div class="perk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Early Partner statüsü
+      </div>
+      <div class="perk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Lansman önceliği
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-progress" id="formProgress">
+        <div class="progress-item active" id="prog1">
+          <span class="progress-num">1</span>İletişim
+        </div>
+        <div class="progress-item" id="prog2">
+          <span class="progress-num">2</span>Marka
+        </div>
+        <div class="progress-item" id="prog3">
+          <span class="progress-num">3</span>Kampanya
+        </div>
+      </div>
+
+      <div class="form-body">
+        <form id="brandForm"
+          action="https://docs.google.com/forms/d/e/FORM_ID_HERE/formResponse"
+          method="POST"
+          target="hidden_iframe">
+
+          <!-- STEP 1: CONTACT -->
+          <div class="step active" id="step1">
+            <div class="form-group">
+              <label class="label">Şirket / Marka adı</label>
+              <!-- TODO: entry.xxxxx değiştir -->
+              <input type="text" name="entry.1111111111" id="brand_name" placeholder="Örn: Vulse" required>
+            </div>
+
+            <div class="form-group">
+              <label class="label">İletişim kişisi</label>
+              <input type="text" name="entry.2222222222" id="contact_name" placeholder="Ad Soyad" required>
+            </div>
+
+            <div class="form-group">
+              <label class="label">E-posta</label>
+              <input type="email" name="entry.3333333333" id="email" placeholder="ornek@vulse.io" required>
+            </div>
+
+            <div class="form-group">
+              <label class="label">Telefon <span class="label-sub">(opsiyonel)</span></label>
+              <input type="tel" name="entry.4444444444" id="phone" placeholder="+90 5XX XXX XX XX">
+            </div>
+
+            <div class="form-group">
+              <label class="label">Ülke</label>
+              <select name="entry.5555555555" id="country" required>
+                <option value="" disabled selected>Seçiniz</option>
+                <option value="Türkiye">Türkiye</option>
+                <option value="İtalya">İtalya</option>
+                <option value="Almanya">Almanya</option>
+                <option value="İngiltere">İngiltere</option>
+                <option value="ABD">ABD</option>
+                <option value="Fransa">Fransa</option>
+                <option value="İspanya">İspanya</option>
+                <option value="Hollanda">Hollanda</option>
+                <option value="Diğer">Diğer</option>
+              </select>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary" onclick="goToStep(2)">
+                Devam
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: BRAND -->
+          <div class="step" id="step2">
+
+            <div class="form-group">
+              <label class="label">Web sitesi <span class="label-sub">(opsiyonel)</span></label>
+              <input type="url" name="entry.6666666666" id="website" placeholder="https://...">
+            </div>
+
+            <div class="form-group">
+              <label class="label">Marka kategorisi <span class="label-sub">(en az 1)</span></label>
+              <div class="category-grid">
+                <label class="cat-item">
+                  <input type="checkbox" name="brand_category" value="Yemek & İçecek">
+                  <div class="cat-box"><span class="cat-name">Yemek</span></div>
+                </label>
+                <label class="cat-item">
+                  <input type="checkbox" name="brand_category" value="Moda">
+                  <div class="cat-box"><span class="cat-name">Moda</span></div>
+                </label>
+                <label class="cat-item">
+                  <input type="checkbox" name="brand_category" value="Güzellik">
+                  <div class="cat-box"><span class="cat-name">Güzellik</span></div>
+                </label>
+                <label class="cat-item">
+                  <input type="checkbox" name="brand_category" value="Teknoloji">
+                  <div class="cat-box"><span class="cat-name">Teknoloji</span></div>
+                </label>
+                <label class="cat-item">
+                  <input type="checkbox" name="brand_category" value="Spor">
+                  <div class="cat-box"><span class="cat-name">Spor</span></div>
+                </label>
+                <label class="cat-item">
+                  <input type="checkbox" name="brand_category" value="Ev & Yaşam">
+                  <div class="cat-box"><span class="cat-name">Ev</span></div>
+                </label>
+                <label class="cat-item">
+                  <input type="checkbox" name="brand_category" value="Turizm & Deneyim">
+                  <div class="cat-box"><span class="cat-name">Seyahat</span></div>
+                </label>
+                <label class="cat-item">
+                  <input type="checkbox" name="brand_category" value="Eğitim">
+                  <div class="cat-box"><span class="cat-name">Eğitim</span></div>
+                </label>
+                <label class="cat-item">
+                  <input type="checkbox" name="brand_category" value="Diğer">
+                  <div class="cat-box"><span class="cat-name">Diğer</span></div>
+                </label>
+              </div>
+
+              <input type="hidden" name="entry.7777777777" id="brand_categories_hidden">
+            </div>
+
+            <div class="form-group">
+              <label class="label">Satış kanalınız <span class="label-sub">(birden fazla)</span></label>
+              <div class="platform-list">
+                <div class="platform-item" id="channel-web">
+                  <div class="platform-header" onclick="toggleChannel('web')">
+                    <div class="platform-checkbox">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </div>
+                    <div class="platform-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                        <circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18"/><path d="M12 3c-3 3-3 15 0 18"/>
+                      </svg>
+                    </div>
+                    <span class="platform-name">Web sitesi / E-ticaret</span>
+                  </div>
+                  <div class="platform-fields">
+                    <input type="text" name="entry.8888888888" id="web_platform" placeholder="Shopify / Ikas / Ticimax / Diğer">
+                  </div>
+                </div>
+
+                <div class="platform-item" id="channel-marketplace">
+                  <div class="platform-header" onclick="toggleChannel('marketplace')">
+                    <div class="platform-checkbox">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </div>
+                    <div class="platform-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                        <path d="M3 7h18l-1 14H4L3 7z"/><path d="M16 7a4 4 0 0 0-8 0"/>
+                      </svg>
+                    </div>
+                    <span class="platform-name">Pazaryeri</span>
+                  </div>
+                  <div class="platform-fields">
+                    <input type="text" name="entry.9999999999" id="marketplaces" placeholder="Trendyol / Hepsiburada / Amazon / Diğer">
+                  </div>
+                </div>
+
+                <div class="platform-item" id="channel-store">
+                  <div class="platform-header" onclick="toggleChannel('store')">
+                    <div class="platform-checkbox">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </div>
+                    <div class="platform-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                        <path d="M4 10h16v10H4V10z"/><path d="M2 10l2-6h16l2 6"/>
+                      </svg>
+                    </div>
+                    <span class="platform-name">Dükkan</span>
+                  </div>
+                  <div class="platform-fields">
+                    <input type="text" name="entry.1010101010" id="store_city" placeholder="Şehir / Bölge (opsiyonel)">
+                  </div>
+                </div>
+              </div>
+
+              <input type="hidden" name="entry.1111111112" id="sales_channels_hidden">
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-secondary" onclick="goToStep(1)">Geri</button>
+              <button type="button" class="btn btn-primary" onclick="goToStep(3)">Devam</button>
+            </div>
+          </div>
+
+          <!-- STEP 3: CAMPAIGN -->
+          <div class="step" id="step3">
+
+            <div class="form-group">
+              <label class="label">Hedefiniz <span class="label-sub">(en az 1)</span></label>
+              <div class="category-grid">
+                <label class="cat-item">
+                  <input type="checkbox" name="goal" value="Satış">
+                  <div class="cat-box"><span class="cat-name">Satış</span></div>
+                </label>
+                <label class="cat-item">
+                  <input type="checkbox" name="goal" value="Website trafiği">
+                  <div class="cat-box"><span class="cat-name">Trafik</span></div>
+                </label>
+                <label class="cat-item">
+                  <input type="checkbox" name="goal" value="Mağaza ziyareti">
+                  <div class="cat-box"><span class="cat-name">Ziyaret</span></div>
+                </label>
+                <label class="cat-item">
+                  <input type="checkbox" name="goal" value="Awareness">
+                  <div class="cat-box"><span class="cat-name">Bilinirlik</span></div>
+                </label>
+                <label class="cat-item">
+                  <input type="checkbox" name="goal" value="UGC içerik üretimi">
+                  <div class="cat-box"><span class="cat-name">UGC</span></div>
+                </label>
+                <label class="cat-item">
+                  <input type="checkbox" name="goal" value="Diğer">
+                  <div class="cat-box"><span class="cat-name">Diğer</span></div>
+                </label>
+              </div>
+
+              <input type="hidden" name="entry.1212121212" id="goals_hidden">
+            </div>
+
+            <div class="form-group">
+              <label class="label">Hangi platformlarda kampanya düşünüyorsunuz? <span class="label-sub">(en az 1)</span></label>
+              <div class="platform-list">
+                <div class="platform-item" id="plat-ig">
+                  <div class="platform-header" onclick="togglePlatform('ig')">
+                    <div class="platform-checkbox">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </div>
+                    <div class="platform-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                        <rect x="2" y="2" width="20" height="20" rx="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+                      </svg>
+                    </div>
+                    <span class="platform-name">Instagram</span>
+                  </div>
+                </div>
+
+                <div class="platform-item" id="plat-tiktok">
+                  <div class="platform-header" onclick="togglePlatform('tiktok')">
+                    <div class="platform-checkbox">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </div>
+                    <div class="platform-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                        <path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 2.5 4.5 5 5"/>
+                      </svg>
+                    </div>
+                    <span class="platform-name">TikTok</span>
+                  </div>
+                </div>
+
+                <div class="platform-item" id="plat-youtube">
+                  <div class="platform-header" onclick="togglePlatform('youtube')">
+                    <div class="platform-checkbox">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </div>
+                    <div class="platform-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                        <rect x="2" y="4" width="20" height="16" rx="4"/>
+                        <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
+                      </svg>
+                    </div>
+                    <span class="platform-name">YouTube</span>
+                  </div>
+                </div>
+              </div>
+
+              <input type="hidden" name="entry.1313131313" id="campaign_platforms_hidden">
+            </div>
+
+            <div class="form-group">
+              <label class="label">Aylık içerik üretici bütçesi <span class="label-sub">(tahmini)</span></label>
+              <select name="entry.1414141414" id="budget_range" required>
+                <option value="" disabled selected>Seçiniz</option>
+                <option value="0-5.000 TL">0 – 5.000 TL</option>
+                <option value="5.000-15.000 TL">5.000 – 15.000 TL</option>
+                <option value="15.000-50.000 TL">15.000 – 50.000 TL</option>
+                <option value="50.000-150.000 TL">50.000 – 150.000 TL</option>
+                <option value="150.000 TL+">150.000 TL+</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="label">İş birliği tipi</label>
+              <select name="entry.1515151515" id="collab_type" required>
+                <option value="" disabled selected>Seçiniz</option>
+                <option value="Ücretli iş birliği">Ücretli iş birliği</option>
+                <option value="Ürün + ücret">Ürün + ücret</option>
+                <option value="Sadece UGC (hesapta paylaşım yok)">Sadece UGC (hesapta paylaşım yok)</option>
+                <option value="Affiliate / kod / link">Affiliate / kod / link</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="label">Ne zaman başlamak istiyorsunuz?</label>
+              <select name="entry.1616161616" id="timeline" required>
+                <option value="" disabled selected>Seçiniz</option>
+                <option value="Bu hafta">Bu hafta</option>
+                <option value="1-2 hafta içinde">1–2 hafta içinde</option>
+                <option value="Bu ay">Bu ay</option>
+                <option value="Net değil / görüşelim">Net değil / görüşelim</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="label">Notlar <span class="label-sub">(opsiyonel)</span></label>
+              <textarea name="entry.1717171717" id="notes" placeholder="Ürün, hedef kitle, şehir, kampanya beklentisi, varsa link/kod…"></textarea>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-secondary" onclick="goToStep(2)">Geri</button>
+              <button type="submit" class="btn btn-primary" id="submitBtn">Başvur</button>
+            </div>
+          </div>
+
+        </form>
+
+        <div class="success-screen" id="successScreen">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h2>Başvurunuz alındı!</h2>
+          <p>Erken erişim onayı için ekibimiz sizinle e-posta üzerinden iletişime geçecek.</p>
+
+          <div class="success-card">
+            <div class="success-avatar" id="successAvatar">BR</div>
+            <div class="success-info">
+              <h4 id="successName">Marka</h4>
+              <p>Erken Erişim · Türkiye</p>
+            </div>
+          </div>
+
+          <a href="https://vulse.io" class="success-link">
+            vulse.io'ya git
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="form-footer" id="formFooter">
+        <p>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Bilgileriniz güvende · Spam yok
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-location">Torino, İtalya</div>
+    © 2026 Vulse. · <a href="https://vulse.io">vulse.io</a>
+  </footer>
+
+  <script>
+    let currentStep = 1;
+
+    const selectedChannels = new Set();
+    const selectedPlatforms = new Set();
+
+    function updateProgress() {
+      for (let i = 1; i <= 3; i++) {
+        const el = document.getElementById('prog' + i);
+        el.className = 'progress-item';
+        if (i < currentStep) el.classList.add('completed');
+        if (i === currentStep) el.classList.add('active');
+      }
+    }
+
+    function goToStep(step) {
+      if (step > currentStep) {
+        if (currentStep === 1 && !validateStep1()) return;
+        if (currentStep === 2 && !validateStep2()) return;
+      }
+
+      document.getElementById('step' + currentStep).classList.remove('active');
+      document.getElementById('step' + step).classList.add('active');
+      currentStep = step;
+      updateProgress();
+    }
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function validateStep1() {
+      const brand = document.getElementById('brand_name').value.trim();
+      const name = document.getElementById('contact_name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const country = document.getElementById('country').value;
+
+      if (!brand) { alert('Lütfen şirket/marka adını girin.'); return false; }
+      if (!name) { alert('Lütfen iletişim kişisini girin.'); return false; }
+      if (!email || !validateEmail(email)) { alert('Geçerli bir e-posta adresi girin.'); return false; }
+      if (!country) { alert('Lütfen ülke seçin.'); return false; }
+
+      return true;
+    }
+
+    function validateStep2() {
+      const cats = document.querySelectorAll('input[name="brand_category"]:checked');
+      if (cats.length === 0) { alert('En az bir marka kategorisi seçin.'); return false; }
+      // satış kanalı zorunlu değil (kebapçı vs. için), ama isterseniz zorunlu yapabilirsiniz.
+      return true;
+    }
+
+    function validateStep3() {
+      const goals = document.querySelectorAll('input[name="goal"]:checked');
+      if (goals.length === 0) { alert('En az bir hedef seçin.'); return false; }
+      if (selectedPlatforms.size === 0) { alert('En az bir kampanya platformu seçin.'); return false; }
+
+      const budget = document.getElementById('budget_range').value;
+      const collab = document.getElementById('collab_type').value;
+      const timeline = document.getElementById('timeline').value;
+
+      if (!budget) { alert('Lütfen bütçe aralığı seçin.'); return false; }
+      if (!collab) { alert('Lütfen iş birliği tipi seçin.'); return false; }
+      if (!timeline) { alert('Lütfen başlangıç zamanını seçin.'); return false; }
+
+      return true;
+    }
+
+    function toggleChannel(ch) {
+      const el = document.getElementById('channel-' + ch);
+      if (selectedChannels.has(ch)) {
+        selectedChannels.delete(ch);
+        el.classList.remove('selected');
+      } else {
+        selectedChannels.add(ch);
+        el.classList.add('selected');
+      }
+    }
+
+    function togglePlatform(p) {
+      const el = document.getElementById('plat-' + p);
+      if (selectedPlatforms.has(p)) {
+        selectedPlatforms.delete(p);
+        el.classList.remove('selected');
+      } else {
+        selectedPlatforms.add(p);
+        el.classList.add('selected');
+      }
+    }
+
+    document.getElementById('brandForm').addEventListener('submit', function(e) {
+      if (!validateStep3()) {
+        e.preventDefault();
+        return;
+      }
+
+      // Categories -> hidden
+      const cats = [];
+      document.querySelectorAll('input[name="brand_category"]:checked').forEach(cb => cats.push(cb.value));
+      document.getElementById('brand_categories_hidden').value = cats.join(', ');
+
+      // Goals -> hidden
+      const goals = [];
+      document.querySelectorAll('input[name="goal"]:checked').forEach(cb => goals.push(cb.value));
+      document.getElementById('goals_hidden').value = goals.join(', ');
+
+      // Sales channels -> hidden
+      const channels = [];
+      selectedChannels.forEach(x => channels.push(x));
+      document.getElementById('sales_channels_hidden').value = channels.join(', ');
+
+      // Platforms -> hidden
+      const plats = [];
+      selectedPlatforms.forEach(x => plats.push(x));
+      document.getElementById('campaign_platforms_hidden').value = plats.join(', ');
+
+      // UI success
+      const btn = document.getElementById('submitBtn');
+      btn.innerHTML = 'Gönderiliyor...';
+      btn.disabled = true;
+
+      const brand = document.getElementById('brand_name').value.trim();
+      const initials = brand.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+
+      setTimeout(() => {
+        document.getElementById('successAvatar').innerText = initials || 'BR';
+        document.getElementById('successName').innerText = brand || 'Marka';
+
+        document.getElementById('brandForm').style.display = 'none';
+        document.getElementById('formProgress').style.display = 'none';
+        document.getElementById('formFooter').style.display = 'none';
+        document.getElementById('successScreen').style.display = 'block';
+      }, 900);
+    });
+  </script>
+</body>
+</html>
